@@ -24,10 +24,14 @@ int main()
 void binary_search(int lb, int ub, int key)
 {
 
-    int mid = (lb + ub) / 2;
+    int mid;
 
     //If there is only one element to match
-    if(lb == ub)
+    if(lb>ub)
+    {
+        cout << "Element not found!";
+    }
+    else if(lb == ub)
     {
         if(key == a[mid])
             cout << "Element has been found!";
@@ -36,6 +40,7 @@ void binary_search(int lb, int ub, int key)
     } 
     else
     { 
+        mid = (lb + ub) / 2;
         if(key == a[mid])
             cout << "Element has been found!";
         else if(key < a[mid])

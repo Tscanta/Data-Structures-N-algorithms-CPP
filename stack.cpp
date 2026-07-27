@@ -1,5 +1,4 @@
-//STACK PROGRAM DSC
-
+//Implementation of stack data structure
 #include <iostream>
 using namespace std;
 
@@ -8,43 +7,80 @@ int pop();
 void display();
 
 int top=0;
-const int n = 10;
+const int n=10;
 int stack[n];
 
 int main()
 {
-    int e;
-    cout << "The size of the array is: "<<n;
-    cout << "Enter the elements in the array: ";
-    cin >> e;
-    int push(e);
-    
+    int choice=0, x;
+    while(choice!=4)
+    {
+        cout << "Press 1 to push an element in the stack\n";
+        cout << "Press 2 to pop an element from the stack\n";
+        cout << "Press 3 to display the elements in the stack\n";
+        cout << "Press 4 to exit\n";
+        cin >> choice;
+        switch(choice)
+        {
+            case 1:
+                cout << "Enter the element to be pushed in the stack: ";
+                cin >> x;
+                push(x);
+                break;
+            case 2:
+                cout << "Popping an element from the stack...\n";
+                pop();
+                break;
+            case 3:
+                display();
+                break;
+            case 4:
+                exit(0);
+            default:
+                cout << "Invalid choice\n";
+        }
+    }
 }
 
 int push(int x)
 {
     if(top==n)
+    {
         cout << "The stack is full (overflow)\n";
-    else    
+    }
+    else
+    {
         stack[top] = x;
         top++;
+    }
+    return 0;
 }
 
 int pop()
 {
     if(top==0)
+    {
         cout << "The stack is empty (underflow)\n";
-    else    
+    }
+    else
+    {
         top--;
+    }    
+    return 0;
 }
 
 void display()
 {
     if(top==0)
+    {
         cout << "The stack is empty\n";
+    }
     else    
+    {
         for(int i=top-1; i>=0; i--)
         {
-            cout << stack[i];
+            cout << stack[i] << " ";
         }
+        cout << endl;
+    }
 }
