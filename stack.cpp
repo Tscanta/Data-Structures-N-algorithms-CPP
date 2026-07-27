@@ -44,27 +44,27 @@ int main()
 
 int push(int x)
 {
-    if(top==n)
+    if(top==n) //checking if the stack is full. top matches with the size of the stack.
     {
         cout << "The stack is full (overflow)\n";
     }
     else
     {
-        stack[top] = x;
-        top++;
+        stack[top] = x; //adding the element to the stack
+        top++; 
     }
     return 0;
 }
 
 int pop()
 {
-    if(top==0)
+    if(top==0) //if top is zero, then the stack is empty.
     {
         cout << "The stack is empty (underflow)\n";
     }
     else
     {
-        top--;
+        top--; //removing the last element from the stack by decrementing the top.
     }    
     return 0;
 }
@@ -77,7 +77,7 @@ void display()
     }
     else    
     {
-        for(int i=top-1; i>=0; i--)
+        for(int i=top-1; i>=0; i--) //printing the elements of the stack.
         {
             cout << stack[i] << " ";
         }

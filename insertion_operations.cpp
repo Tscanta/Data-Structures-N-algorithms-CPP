@@ -1,11 +1,11 @@
-// Operations on Array
+// Operations on array
 #include <iostream>
 using namespace std;
 
 void insert_at_start(int);
 void insert_at_end(int);
 void insert_at_position(int x, int pos);
-int A[100];
+int a[100];
 int n=0;
 
 int main()
@@ -40,10 +40,10 @@ int main()
             default:
                 cout << "Invalid Input\n";
         }
-        cout << "Array: ";
+        cout << "array: ";
         for(int i = 0; i < n; i++)
         {
-            cout << A[i] << " ";
+            cout << a[i] << " ";
             cout << endl;
         }
     }
@@ -53,15 +53,15 @@ void insert_at_start(int x)
 {
     for(int i = n; i > 0; i--)
     {
-        A[i] = A[i-1];
+        a[i] = a[i-1];
     }
-    A[0] = x;
+    a[0] = x;
     n++;
 }
         
 void insert_at_end(int x)
 {
-    A[n] = x;
+    a[n] = x;
     n++;
 }
 
@@ -71,9 +71,9 @@ void insert_at_position(int x, int pos)
     {
         for(int i = n; i > pos; i--)
         {
-            A[i] = A[i-1];
+            a[i] = a[i-1];
         }
-        A[pos] = x;
+        a[pos] = x;
         n++;
     }
     else
