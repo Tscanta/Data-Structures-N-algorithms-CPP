@@ -2,84 +2,71 @@
 #include <iostream>
 using namespace std;
 
-void insert_at_start(int);
-void insert_at_end(int);
-void insert_at_position(int x, int pos);
-int a[100];
-int n=0;
-
 int main()
-{
-    int choice,x,pos;
-    while(1)
+{  
+    int a[100], n, x, pos;
+    int choice = 0;
+    cout << "Enter the number of elements: ";
+    cin >> n;
+    cout << "Enter the elements: ";
+    for(int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+    while(choice != 5)
     {
         cout << "Press 1. Insert at Start\n";
         cout << "Press 2. Insert at End\n";
         cout << "Press 3. Insert at Position \n";
-        cout << "Press 4. To exit\n";
+        cout << "Press 4. To Display\n";
+        cout << "Press 5. To Exit\n";
         cin >> choice;
         switch(choice)
         {
             case 1:
-                cout << "Enter a value: ";
+                cout << "Enter the element to insert at start: ";
                 cin >> x;
-                insert_at_start(x);
+                for(int i=n; i > 0; i--)
+                {
+                    a[i] = a[i-1]; //shifting the elements to the right
+                }
+                a[0] = x;
+                n++;
                 break;
             case 2:
-                cout << "Enter a value: ";
+                cout << "Enter the element to insert at end: ";
                 cin >> x;
-                insert_at_end(x);
+                a[n] = x; //inserting the element at the end
+                n++;
                 break;
             case 3:
-                cout << "Enter a value & position: ";
-                cin >> x >> pos;
-                insert_at_position(x,pos);
+                cout << "Enter the position to insert: ";
+                cin >> pos;
+                if(pos >= 0 && pos <= n) //checking for valid position cant be less than 0 or greater than the array size
+                {
+                    for(int i=n; i > pos; i--)
+                    {
+                        a[i] = a[i-1]; //shifting the elements to the right
+                    }
+                    n++;
+                }
+                else
+                {
+                    cout << "Invalid position\n";
+                    break;
+                }
                 break;
             case 4:
+                cout << "Array elements are: ";
+                for(int i=0; i<n; i++)
+                {
+                    cout << a[i] << " "; //printing the array elements
+                }
+                cout << endl;
+                break;
+            case 5:
                 exit(0);
-            default:
-                cout << "Invalid Input\n";
-        }
-        cout << "array: ";
-        for(int i = 0; i < n; i++)
-        {
-            cout << a[i] << " ";
-            cout << endl;
+            }
         }
     }
-}
-
-void insert_at_start(int x)
-{
-    for(int i = n; i > 0; i--)
-    {
-        a[i] = a[i-1];
-    }
-    a[0] = x;
-    n++;
-}
         
-void insert_at_end(int x)
-{
-    a[n] = x;
-    n++;
-}
-
-void insert_at_position(int x, int pos)
-{
-    if (pos >= 0 && pos <= n)
-    {
-        for(int i = n; i > pos; i--)
-        {
-            a[i] = a[i-1];
-        }
-        a[pos] = x;
-        n++;
-    }
-    else
-    {
-        cout << "Invalid Value\n";
-    }
-}
-
-
