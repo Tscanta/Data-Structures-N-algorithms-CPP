@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-int enqueue(int x);
+int enqueue(int z);
 int dequeue();
 void display();
 
