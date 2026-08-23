@@ -1,5 +1,6 @@
 .vscode
 .idea
+.exe
 
 linear_search.exe
 binary_search.exe
