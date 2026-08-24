@@ -88,5 +88,6 @@ void display()
         {
             cout << queue[i] << " "; //displaying the elements in the queue
         }
+        cout << queue[rear] << endl; //displaying the rear element
     }
 }
