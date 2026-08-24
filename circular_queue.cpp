@@ -84,7 +84,7 @@ void display()
     }
     else
     {
-        for(int i=(front+1)%n; i!=rear; i=(i+1)%n)
+        for(int i=(front+1)%n; i!=rear; i=(i+1)%n) 
         {
             cout << queue[i] << " "; //displaying the elements in the queue
         }
