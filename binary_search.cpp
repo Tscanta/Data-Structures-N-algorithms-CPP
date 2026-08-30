@@ -12,7 +12,8 @@ int main()
     cin >> n; // Total number of elements in the array.
     for (int i = 0; i < n; i++)
     {
-        cin >> a[i]; // Enter the elements of the array. NOTE! THE ELEMENTS MUST BE ENTERED IN SORTED ORDER FOR BINARY SEARCH TO WORK.
+        cin >> a[i]; // Enter the elements of the array.
+        // NOTE! THE ELEMENTS MUST BE ENTERED IN SORTED ORDER FOR BINARY SEARCH TO WORK.
     }
     cout << "Enter the element to be searched: ";
     cin >> key; // Element to be searched.

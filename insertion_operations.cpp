@@ -1,4 +1,4 @@
-// Operations on array
+// Insertion operations on array
 #include <iostream>
 using namespace std;
 
