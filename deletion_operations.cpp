@@ -32,9 +32,6 @@ int main()
             }
             cout << endl;
             break;
-
-
-
         case 2:
             n--; //decrementing the number of elements
             cout << "Array after deletion in the end: ";
@@ -44,10 +41,6 @@ int main()
             }
             cout << endl;
             break;
-
-
-
-
         case 3:
             cout << "Enter the position to delete: ";
             cin >> pos;
@@ -68,15 +61,8 @@ int main()
             }
             cout << endl;
             break;
-
-
-
-
         case 4:
             exit(0);
-
-
-
         default:   
             cout << "Invalid Input\n";
     }
