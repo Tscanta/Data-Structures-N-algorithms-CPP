@@ -67,7 +67,7 @@ int insert_at_start(Node *head, int value)
     if(head == NULL)
         head = newnode;
     else
-        newnode -> next = head;
+        newnode->next = head;
         head = newnode; 
 }
 
