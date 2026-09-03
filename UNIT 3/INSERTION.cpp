@@ -7,27 +7,26 @@ void insert_pos(int x, int pos);
 void display();
 
 class Node{
-    public:
-        int data;
-        Node *next;
+    public: 
+        int data; //the actual data
+        Node *next; // Stores the address of the next node
 
-        Node(int x)
+        Node(int x) // Making a constructor
         {
-            data = x;
+            data = x; 
             next = NULL;
         }
-}; Node *head = NULL;
+}; Node *head = NULL; //Initializing the head to null
 
 int main()
 {
     int n, x, pos, opt;
-    while(opt != 3)
+    while(opt != 3) // will run until the user enters opt>4
     {
         cout << " \n";
         cout << "Press 1. Insert at Start\n";
         cout << "Press 2. Insert at End\n";
         cout << "Press 3. Insert at Position\n";
-        cout << "Press 4. Display\n";
         cin >> opt;
         switch(opt)
         {
@@ -60,14 +59,14 @@ int main()
 void insert_start(int x)
 {
     Node *newnode = new Node(x);
-    if(head == NULL)
+    if(head == NULL) // If head is empty
     {
-        head = newnode; 
+        head = newnode; // The head will be the newnode
     }
     else
     {
-        newnode->next = head;
-        head = newnode;
+        newnode->next = head; // The next of the newnode is pointing to the head
+        head = newnode; // The newnode is now the head
     }
 }
 void insert_end(int x)
