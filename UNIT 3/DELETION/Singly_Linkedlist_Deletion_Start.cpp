@@ -37,7 +37,6 @@ void delete_start()
     }
 }
 
-
 void display()
 {
     if(head == NULL)
