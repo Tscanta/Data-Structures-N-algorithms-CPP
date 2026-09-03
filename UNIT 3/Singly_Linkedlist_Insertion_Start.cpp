@@ -41,7 +41,7 @@ void insert_at_start(int x)
         head = newnode; //If empty, the newly added node automatically has the head
     }
     else{
-        newnode->next = head; //The second node has the node now
+        newnode->next = head; //The second node has the head now
         head = newnode; //Now, the newly created node has the head
     } 
 }
