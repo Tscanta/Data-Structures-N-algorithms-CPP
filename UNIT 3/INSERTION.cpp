@@ -23,6 +23,7 @@ int main()
     int n, x, pos, opt;
     while(opt != 3)
     {
+        cout << " \n";
         cout << "Press 1. Insert at Start\n";
         cout << "Press 2. Insert at End\n";
         cout << "Press 3. Insert at Position\n";
@@ -36,18 +37,21 @@ int main()
                 cin >> x;
                 insert_start(x);
                 display();
+                break;
             case 2:
                 cout << " \n";
                 cout << "Enter a Number - \n";
                 cin >> x;
                 insert_end(x);
                 display();
+                break;
             case 3:
                 cout << " \n";  
                 cout << "Enter a Number and position - \n";
                 cin >> x >> pos;
                 insert_pos(x,pos);
                 display();
+                break;
         }
     }
 }
