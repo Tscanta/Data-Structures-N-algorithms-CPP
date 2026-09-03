@@ -21,9 +21,12 @@ class Node{
 int main()
 {
     int n, x, pos, opt;
+    string insdel;
     while(opt != 3) // will run until the user enters opt>4
     {
         cout << " \n";
+        cout << "DO YOU WANT TO INSERT OR DELETE?";
+        cin >> insdel
         cout << "Press 1. Insert at Start\n";
         cout << "Press 2. Insert at End\n";
         cout << "Press 3. Insert at Position\n";
