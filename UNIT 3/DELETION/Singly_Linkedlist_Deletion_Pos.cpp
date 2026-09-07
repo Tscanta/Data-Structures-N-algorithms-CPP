@@ -40,66 +40,57 @@ int main()
         cout << "\nEnter the position to delete the element at that position\n";
         cin >> pos;
         delete_pos(pos);
+        display();
     }
 }
 
 void delete_pos(int pos)
 {
-    Node *temp = head;
-    // Checking if the position is less than one or not
-    if(pos < 1 || temp==NULL || temp->next==NULL)
-    {
-        cout << "INVALID POSITION\n";
-        return;
-    }
-    
+
     // Checking whether the list is empty or not
-    else if(head==NULL)
+    if(head==NULL)
     {
         cout << "The list is empty\n";
         return;
     }
 
-    // Checking when the position is 1
-    else if (pos == 1)
+    // Checking if the position is less than one or not
+    if(pos < 1)
     {
-        Node *temp = head; // Temp is pointing to head AKA the first node.
+        cout << "INVALID POSITION\n";
+        return;
+    }
+    
+    Node *temp = head; // Creating a temp var & pointing it to head AKA the first element.
+    Node *newtemp; // Creating another temp var
+
+
+    // Checking when the position is 1
+    if (pos == 1)
+    {
+        temp = head; // Temp is pointing to head AKA the first node.
         head = head->next; // Now, head is pointing to the second node.
         delete temp; // Since, temp is still pointing to the first node, we delete temp.
         return;
     }
 
-    
-    else
+    int i = 1;
+
+    while(i<pos-1 && temp!=NULL)
     {
-        Node *temp = head; // Creating a temp var & pointing it to head AKA the first element.
-        Node *newtemp; // Creating another temp var
-        int i = 1;
-
-        while(i<pos-1 && temp!=NULL)
-        {
-            temp = temp->next;
-            i++;
-        }
-        newtemp = temp->next;
-        temp->next = newtemp->next;
-        delete temp;
-
-
-    }
-
-
-    int i=1;
-    Node *temp = head;
-    Node *temp2;
-    while(i<(pos-1))
-    {
-        temp = temp->next; //The temp will move until the next element is the one to be deleted (pos)
+        temp = temp->next;
         i++;
     }
-    temp2 = temp->next;
-    temp->next = temp2->next;
-    delete temp2;
+
+    if(temp==NULL || temp->next==NULL)
+    {
+        cout << "INVALID POSITION\n";
+        return;
+    }
+
+    newtemp = temp->next;
+    temp->next = newtemp->next;
+    delete newtemp;
 }
 
 void display()
