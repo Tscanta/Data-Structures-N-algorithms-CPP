@@ -1,7 +1,5 @@
 //Queue implementation using linked list
 
-//Stack implementation using linked list
-
 #include <iostream>
 using namespace std;
 
