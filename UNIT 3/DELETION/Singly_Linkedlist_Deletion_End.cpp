@@ -50,26 +50,24 @@ void delete_end()
 {
     if(head == NULL)
     {
-        cout << "The list is empty";
+        cout << "Empty\n";
     }
-    else if(head->next == NULL) // When theres only one element
+    if(head->next==NULL)
     {
+        head=NULL;
         delete head;
-        head = NULL;
     }
     else
     {
         Node *temp = head;
-        Node *temp2;
-        while(temp->next != NULL)
+        Node *newtemp;
+        while(temp->next->next!=NULL)
         {
-            temp2 = temp;
-            temp = temp->next; // temp2 will keep on moviing forward
+            temp=temp->next;
         }
-        temp2->next = NULL;
-        delete temp;
-
-        cout << "UPDATED LIST: ";
+        newtemp = temp->next;
+        temp->next=NULL;
+        delete newtemp;
         display();
     }
 }
