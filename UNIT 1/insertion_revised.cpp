@@ -14,7 +14,7 @@ int pos;
 int main(){
     int opt;
     display();
-    cout << "\n1.Insert Start.\n\n2.Insert End.\n\n3.Insert Pos.\n";
+    cout << "\n1.Insert Start.\n\n2.Insert End.\n\n3.Insert Pos.\n4.Update\n";
     cin >> opt;
     switch(opt)
     {
@@ -36,6 +36,14 @@ int main(){
             cout << "\nEnter a position\n";
             cin >> pos;
             ipos(x,pos);
+            display();
+            break;
+        case 4:
+            cout << "\nEnter a number\n";
+            cin >> x;
+            cout << "\nEnter a position\n";
+            cin >> pos;
+            update(x,pos);
             display();
             break;
         default:
@@ -73,6 +81,19 @@ int ipos(int x, int pos){
     a[pos-1] = x;
     n++; 
 return 0;
+}
+
+int update(int x, int pos)
+{
+    if(pos < 1 || pos > n)
+    {
+        cout << "INVALID POSITION\n";
+        return 0;
+    }
+
+    a[pos - 1] = x;
+
+    return 0;
 }
 
 void display(){
