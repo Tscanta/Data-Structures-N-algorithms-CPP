@@ -59,8 +59,8 @@ void enqueue(int x) // Basically insertion at the beginning
     }
     else
     {
-        newnode->next=front;
-        front=newnode;
+        rear->next=newnode;
+        rear=newnode;
     }
 }
 
