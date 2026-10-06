@@ -1,5 +1,6 @@
 #include <iostream>
 
+// Global Variables
 int n=5; // Size of the array
 int a[]={60,20,40,10,50};
 int i,j;
@@ -25,7 +26,6 @@ void selectionSort(int a[])
 
 int main()
 {
-
     std::cout << "Unsorted Array: ";
     for(i=0;i<n;i++)
     {
