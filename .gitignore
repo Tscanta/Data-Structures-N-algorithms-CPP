@@ -2,6 +2,7 @@
 .idea
 .exe
 
+exam/
 linear_search.exe
 binary_search.exe
 arrayops.exe

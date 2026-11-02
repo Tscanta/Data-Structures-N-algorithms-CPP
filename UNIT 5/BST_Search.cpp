@@ -105,7 +105,6 @@ Node* insertion(Node *root, int x)
     return root;
 }
 
-
 Node* deletion(Node *root, int k)
 {
     if(root == NULL)
