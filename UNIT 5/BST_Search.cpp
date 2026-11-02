@@ -1,5 +1,5 @@
-//Binary Search Tree
-#include <iostream>
+//Binary Search Tree - insertion, deletion, search and display 
+#include <iostream> 
 using namespace std;
 
 // Initializing the Nodes
